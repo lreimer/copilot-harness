@@ -31,4 +31,4 @@ Personal GitHub Copilot harness template for quickly bootstrapping repositories 
 ./scripts/bootstrap.sh
 ```
 
-This validates/creates the standard harness folders in the current repository.
+This ensures the standard harness folders exist in this template repository (regardless of your current working directory).
