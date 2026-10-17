@@ -1,0 +1,20 @@
+{
+  "name": "copilot-harness",
+  "description": "Personal reusable  GitHub Copilot agents and skills.",
+  "version": "1.0.0",
+  "author": {
+    "name": "M.-Leander Reimer",
+    "email": "mario-leander.reimer@qaware.de"
+  },
+  "homepage": "https://github.com/lreimer/copilot-harness",
+  "repository": "https://github.com/lreimer/copilot-harness",
+  "license": "MIT",
+  "keywords": [
+    "copilot",
+    "agents",
+    "skills",
+    "developer-tools"
+  ],
+  "agents": ".github/agents/",
+  "skills": ".github/skills/"
+}

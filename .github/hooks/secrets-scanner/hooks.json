@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionEnd": [
+      {
+        "type": "command",
+        "bash": ".github/hooks/secrets-scanner/scan-secrets.sh",
+        "cwd": ".",
+        "env": {
+          "SKIP_SECRETS_SCAN": "true",
+          "SCAN_MODE": "warn",
+          "SCAN_SCOPE": "diff"
+        },
+        "timeoutSec": 30
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "copilot-harness",
+  "owner": {
+    "name": "M.-Leander Reimer",
+    "url": "https://github.com/lreimer"
+  },
+  "metadata": {
+    "description": "Personal reusable GitHub Copilot agents and skills.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "copilot-harness",
+      "description": "Personal reusable GitHub Copilot agents and skills.",
+      "version": "1.0.0",
+      "author": {
+        "name": "M.-Leander Reimer",
+        "url": "https://github.com/lreimer"
+      },
+      "repository": "https://github.com/lreimer/copilot-harness",
+      "homepage": "https://github.com/lreimer/copilot-harness",
+      "license": "MIT",
+       "keywords": [
+        "copilot",
+        "agents",
+        "skills",
+        "developer-tools"
+      ],
+      "source": {
+        "source": "github",
+        "repo": "lreimer/copilot-harness",
+        "path": ".github/plugin",
+        "ref": "v1.0.0"
+      }
+    }
+  ]
+}
