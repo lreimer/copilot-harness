@@ -2,32 +2,35 @@
 
 ## Overview
 
-This repository is a **template harness for integrating GitHub Copilot AI agents into other repositories**. It provides a structured foundation of agents, skills, hooks, scripts, and documentation to enable projects to work effectively with Copilot agents and tools.
+This repository is a **template harness for integrating GitHub Copilot AI agents into other repositories**. It provides a structured foundation of instructions, agents, skills, prompts, and hooks to enable projects to work effectively with Copilot agents and tools.
 
 ## Repository Structure
 
-- **`.github/agents/`** - Custom Copilot agent definitions and configurations
-- **`.github/skills/`** - Reusable Copilot skills for domain-specific tasks
-- **`.github/hooks/`** - Git hooks and workflow automation for Copilot integration
-- **`.github/scripts/`** - Setup and validation scripts for deploying the harness
-- **`docs/`** - Documentation for using and maintaining the harness
+- **`.github/copilot-instructions.md`** - Repository-wide instructions for Copilot (this file)
+- **`.github/instructions/`** - Path-scoped instructions (`<topic>.instructions.md` with an `applyTo` glob)
+- **`.github/agents/`** - Custom Copilot agent definitions (`<name>.agent.md`)
+- **`.github/skills/`** - Reusable Copilot skills (`<name>/SKILL.md`)
+- **`.github/prompts/`** - Reusable prompt files (`<name>.prompt.md`)
+- **`.github/hooks/`** - Copilot session hooks, e.g. the secrets scanner run at `sessionEnd`
+- **`.github/plugin/`** - Copilot CLI plugin manifest (`plugin.json`) and marketplace definition (`marketplace.json`)
 
 ## Key Conventions
 
 ### Agent Development
 
 - **Naming** - Use descriptive names for agents (e.g., `code-review-agent`, `security-scan-agent`)
-- **Configuration** - Store agent configs in `agents/<name>.agent.md`
-- **Documentation** - Include `agents/<name>/README.md` explaining agent purpose and usage
+- **Configuration** - Store agent definitions in `.github/agents/<name>.agent.md`
+- **Documentation** - Describe the agent's purpose in the frontmatter `description` and its usage in the agent body
 
 ### Skill Development
 
+- **Location** - Store each skill in its own folder as `.github/skills/<name>/SKILL.md`, with supporting files next to it
 - **Scope** - Each skill should solve one focused problem (e.g., a single MCP server integration, domain-specific tools)
 - **Portability** - Skills should be reusable across multiple projects
 - **Documentation** - Include capability documentation and examples of skill usage
 - **Error handling** - Skills should gracefully handle missing dependencies and provide setup instructions
 
-### .copilot-instructions.md (in target projects)
+### .github/copilot-instructions.md (in target projects)
 
 This file is the primary guide for Copilot agents working in any downstream project. It should include:
 

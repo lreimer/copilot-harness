@@ -1,6 +1,6 @@
 # Github Copilot Harness
 
-This repository is a **template harness for integrating GitHub Copilot AI agents into other repositories**. It provides a structured foundation of agents, skills, hooks, scripts, and documentation to enable projects to work effectively with Copilot agents and tools.
+This repository is a **template harness for integrating GitHub Copilot AI agents into other repositories**. It provides a structured foundation of instructions, agents, skills, prompts, and hooks to enable projects to work effectively with Copilot agents and tools.
 
 ## Using This Harness
 
@@ -13,14 +13,14 @@ This repository is a **template harness for integrating GitHub Copilot AI agents
    - Language and framework specifics
    - Team workflows
 3. **Deploy agents and skills** - Install custom agents/skills appropriate for your tech stack
-4. **Configure hooks** - Set up git hooks to integrate Copilot into your workflow
+4. **Configure hooks** - Adjust the Copilot session hooks in `.github/hooks/` (for example the secrets scanner)
 
 ### Adding to Existing Repository
 
 1. Copy the harness structure into `.github/` or equivalent
 2. Customize `copilot-instructions.md` or `AGENTS.md` with your project specifics
 3. Deploy agents and skills as needed
-4. Update hook configurations to match your CI/CD pipeline
+4. Adjust the Copilot session hooks in `.github/hooks/` to your needs
 
 ### Installing as a Copilot CLI Plugin
 

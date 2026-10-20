@@ -172,12 +172,6 @@ scan_file() {
       match=$(printf '%s\n' "$matched_line" | grep -oE "$regex" 2>/dev/null | head -1)
       [[ -z "$match" ]] && continue
 
-      # Strip boundary characters from IP:port matches
-      if [[ "$pattern_name" == "INTERNAL_IP_PORT" ]]; then
-        match=$(printf '%s' "$match" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
-        [[ -z "$match" ]] && continue
-      fi
-
       # Check allowlist
       if [[ ${#ALLOWLIST[@]} -gt 0 ]] && is_allowlisted "$match"; then
         continue
